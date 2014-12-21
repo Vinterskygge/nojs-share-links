@@ -11,13 +11,14 @@ Author URI: https://twitter.com/wojciechmwnuk
 
 function nojs_share_links()
 {
-	if (is_page()) return;
 
-	global $post;
+    global $post;
+    $content = get_the_content( $post->ID );
+
+	if (is_page()) return $content;
 
 	$permalink = esc_url( get_the_permalink( $post->ID ) );
 	$title = get_the_title( $post->ID );
-	$content = get_the_content( $post->ID );
 
     $html = <<<NOJS
 <a href="https://www.facebook.com/sharer/sharer.php?u={$permalink}" target="_blank">Facebook</a>
