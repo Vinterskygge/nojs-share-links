@@ -21,11 +21,11 @@ function nojs_share_links()
 	$title = get_the_title( $post->ID );
 
     $html = <<<NOJS
-    <span>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={$permalink}" target="_blank"><span class="genericon genericon-facebook"></span>Facebook</a>
-    <a href="https://twitter.com/home?status={$title}:%20{$permalink}" target="_blank"><span class="genericon genericon-twitter"></span>Twitter</a>
-    <a href="https://plus.google.com/share?url={$permalink}" target="_blank"><span class="genericon genericon-googleplus"></span>Google+</a>
-    </span><br />
+    <ul class="button-group radius">
+    <li><a class="button small" href="https://www.facebook.com/sharer/sharer.php?u={$permalink}" target="_blank">Facebook</a></li>
+    <li><a class="button small info" href="https://twitter.com/home?status={$title}:%20{$permalink}" target="_blank">Twitter</a></li>
+    <li><a class="button small alert" href="https://plus.google.com/share?url={$permalink}" target="_blank">Google+</a></li>
+    </ul>
 NOJS;
 
 	return $html;
